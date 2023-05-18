@@ -39,9 +39,9 @@ Route::get('clear', function () {
 //Route::any('admin/login', function () {
 //    return view('layouts.admin-master');
 //});
-Route::any('admin/login', function () {
-    return ('ok');
-});
+// Route::any('admin/login', function () {
+//     return view('layouts.admin-master');
+// });
 Route::any('admin/{all}', function () {
     return view('layouts.admin-master');
 })

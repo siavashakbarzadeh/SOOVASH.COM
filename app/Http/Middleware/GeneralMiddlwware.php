@@ -21,17 +21,14 @@ class GeneralMiddlwware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(file_exists(storage_path('installed'))){
 
-            $sql = DB::Select(DB::raw('SHOW TABLES LIKE "menu_builders"'));
-            if ($sql) {
-                $header_menu = MenuBuilder::first();
-                \View::share('header_menu', $header_menu);
-            }
+        $sql = DB::Select(DB::raw('SHOW TABLES LIKE "menu_builders"'));
+        if ($sql) {
+            $header_menu = MenuBuilder::first();
+            \View::share('header_menu', $header_menu);
+        }
 
-        }    
-        
-        
+
         return $next($request);
     }
 }
